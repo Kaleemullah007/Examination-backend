@@ -64,3 +64,23 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+Admin Panel
+
+Composer install
+
+php artisan migrate
+
+copy .env.example .env
+
+add mail credentails to send mail to admin and user in .env
+
+php artisan key:generate
+
+Run below commands on the terminal php artisan serve
+php artisan queue:work
+
+For Frontend npm install
+
+Run below commands on the terminal npm run dev
