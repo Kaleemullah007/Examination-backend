@@ -21,7 +21,7 @@ class QuestionController extends Controller
             ->when($request->question_id, function ($q) use ($request) {
                 $q->where('id', $request->question_id);
             })
-            ->get();
+            ->inRandomOrder()->get();
 
             $paper = Paper::find($request->paper_id);
         
