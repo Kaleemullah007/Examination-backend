@@ -40,6 +40,7 @@ class PaperController extends Controller
      */
     public function store(StorePaperRequest $request)
     {
+        // dd($request->validated());
         Paper::create($request->validated());
         session()->flash('message', 'Created successfully');
         session()->flash('error', 'success');
@@ -84,6 +85,7 @@ class PaperController extends Controller
      */
     public function update(UpdatePaperRequest $request, Paper $paper)
     {
+        
         $paper->update($request->validated());
         session()->flash('message', 'Updated successfully');
         session()->flash('error', 'success');

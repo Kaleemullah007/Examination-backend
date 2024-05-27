@@ -12,8 +12,8 @@
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
                 <th scope="col">Descreiption</th>
-                <th scope="col">Question Count</th>
                 <th scope="col">Paper Time</th>
+                <th scope="col">Question Count</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>

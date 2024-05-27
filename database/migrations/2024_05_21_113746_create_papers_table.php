@@ -18,6 +18,8 @@ return new class extends Migration
             $table->integer('paper_time')->default(10);
             $table->unsignedBigInteger('subject_id');
             $table->string('status')->default(true);
+            $table->boolean('is_shuffle')->default(false);
+            $table->boolean('is_shuffle_option')->default(false);
             $table->foreign('subject_id')->references('id')->on('subjects');
             $table->timestamps();
         });

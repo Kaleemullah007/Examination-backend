@@ -26,7 +26,17 @@ class UpdatePaperRequest extends FormRequest
             'description' => ['nullable', 'string', 'max:255',],
             'subject_id' => ['required', 'numeric'],
             'paper_time' => ['required', 'numeric'],
+            'is_shuffle' => ['nullable', 'boolean'],
+            'is_shuffle_option' => ['nullable', 'boolean'],
 
         ];
+    }
+
+
+    function prepareForValidation()
+    {
+       
+        $this->merge(['is_shuffle'=>$this->get('is_shuffle')=='on'?1:0,
+        'is_shuffle_option'=>$this->get('is_shuffle_option')=='on'?1:0]);
     }
 }

@@ -18,4 +18,6 @@ class PaperController extends Controller
 
         return  PaperResource::collection($papers);
     }
+
+    
 }

@@ -16,12 +16,21 @@ class QuestionController extends Controller
      */
     public function index(PaperIdRequest $request)
     {
+
+        $paper = Paper::find($request->paper_id);
         $questions =    Question::withCount('choiceMultiple')
             ->where('paper_id', $request->paper_id)
             ->when($request->question_id, function ($q) use ($request) {
                 $q->where('id', $request->question_id);
             })
-            ->inRandomOrder()->get();
+            ->when($paper->is_shuffle,function($q){
+                $q->inRandomOrder();
+            })->with(['choiceMultiple'=>function($q) use($paper){
+                if($paper->is_shuffle_option)
+                $q->inRandomOrder();
+    
+            }])
+            ->get();
 
             $paper = Paper::find($request->paper_id);
         

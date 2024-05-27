@@ -67,7 +67,13 @@ class QuestionController extends Controller
 
         // $papers = $paper->with(['question', 'question.choiceMultiple'])
         //     ->paginate($this->per_page);
-        $questions  = Question::with('choiceMultiple')->where('paper_id', $paper->id)->paginate($this->per_page);
+
+        $paper = Paper::find($paper->id);
+        $questions  = Question::with(['choiceMultiple'=>function($q) use($paper){
+            if($paper->is_shuffle_option)
+            $q->inRandomOrder();
+
+        }])->where('paper_id', $paper->id)->paginate($this->per_page);
 
         return view('questions.index', compact('questions'));
     }

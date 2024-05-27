@@ -87,6 +87,45 @@
                                 </div>
                             </div>
 
+
+                            <div class="row mb-3">
+                                <label for="is_shuffle"
+                                    class="col-md-4 col-form-label text-md-end">{{ __('Schuffle Paper Question') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="is_shuffle" type="checkbox"
+                                        class=" @error('is_shuffle') is-invalid @enderror" name="is_shuffle"
+                                          autocomplete="is_shuffle" autofocus>
+
+                                    @error('is_shuffle')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+
+                            <div class="row mb-3">
+                                <label for="is_shuffle_option"
+                                    class="col-md-4 col-form-label text-md-end">{{ __('Schuffle Paper Option') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="is_shuffle_option" type="checkbox"
+                                        class="@error('is_shuffle_option') is-invalid @enderror" name="is_shuffle_option"
+                                          autocomplete="is_shuffle_option" autofocus>
+
+                                    @error('is_shuffle_option')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+
+                            
+
                             <div class="row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">

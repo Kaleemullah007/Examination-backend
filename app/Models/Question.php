@@ -13,6 +13,6 @@ class Question extends Model
 
     public function choiceMultiple(): HasMany
     {
-        return $this->hasMany(ChoiceMultiple::class)->inRandomOrder();
+        return $this->hasMany(ChoiceMultiple::class); //->inRandomOrder();
     }
 }

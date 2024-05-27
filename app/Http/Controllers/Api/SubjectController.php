@@ -15,7 +15,7 @@ class SubjectController extends Controller
     public function index()
     {
         $subjects =    Subject::withCount('papers')
-            ->paginate($this->per_page);
+            ->get();
 
         return  SubjectResource::collection($subjects);
     }
